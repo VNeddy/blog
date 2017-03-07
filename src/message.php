@@ -9,7 +9,24 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
 // 引入连接数据库文件
 require_once ROOT_PATH."/includes/connect.inc.php";
 
-$sql = "SELECT * FROM message ORDER BY pubTime ASC";
+//分页模块
+if (isset($_GET['page'])) {
+    $_page = $_GET['page'];
+} else {
+    $_page = 1;
+}
+$_pagesize = 12;
+$_pagenum = ($_page - 1) * $_pagesize;
+
+// 首先要得到所有的数据总和
+$mysqli_result_1 = $mysqli->query("SELECT id FROM message ORDER BY pubTime DESC");
+$_num = $mysqli_result_1->num_rows;
+$_count_page = ceil($_num / $_pagesize);
+if ($_count_page == 1) {
+    $_count_page = 0;
+}
+// 显示分页内容内容
+$sql = "SELECT * FROM message ORDER BY pubTime ASC LIMIT $_pagenum,$_pagesize";
 
 $mysqli_result = $mysqli->query($sql);
 
@@ -72,6 +89,18 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                         <div id="insert"></div>
                     </div>
                     <!-- 留言展示结束 -->
+                    <!-- 分页开始 -->
+                    <div class="page-num">
+                        <ul>
+                            <?php for ($i = 0; $i < $_count_page; $i++) {
+                                if ($_page == $i+1) {?>
+                                <li><a href="message.php?page=<?php echo $i+1; ?>" class="selected"><?php echo $i+1; ?></a></li>
+                                <?php } else { ?>
+                                <li><a href="message.php?page=<?php echo $i+1; ?>"><?php echo $i+1; ?></a></li>
+                            <?php }} ?>
+                        </ul>
+                    </div>
+                    <!-- 分页结束 -->
                     <!-- 留言开始 -->
                     <div class="comment-form clearfix">
                         <form method="post" id="add-message">
