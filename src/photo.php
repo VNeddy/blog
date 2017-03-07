@@ -5,6 +5,18 @@ define('IN_TG',true);
 define('SCRIPT','photo');
 // 引入公共文件，转换成硬路径，加快速度
 require_once dirname(__FILE__)."/includes/common.inc.php";
+// 引入连接数据库文件
+require_once ROOT_PATH."/includes/connect.inc.php";
+
+$sql = "SELECT id,url FROM photo ORDER BY id ASC LIMIT 0,8;";
+$mysqli_result = $mysqli->query($sql);
+
+if ($mysqli_result && $mysqli_result->num_rows) {
+    while ($rows = $mysqli_result->fetch_assoc()) {
+        $data[] = $rows;
+    }
+}
+print_r( $data);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -25,46 +37,14 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
         <!-- 页头结束 -->
         <!-- 内容开始 -->
         <div class="mainbody clearfix">
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-1.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-2.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-3.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-4.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-5.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-6.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-7.jpg">
-                </div>
-            </div>
-            <div class="box">
-                <div class="pic">
-                    <img src="img/gallery/gallery-item-8.jpg">
-                </div>
-            </div>
+            <?php if (is_array(@$data)) {
+                foreach ($data as $val) { ?>
+                    <div class="box">
+                        <div class="pic">
+                            <?php echo "<img src='".$val['url']."' >" ?>
+                        </div>
+                    </div>
+                <?php } } ?>
         </div>
         <!-- 内容结束 -->
         <!-- 页脚开始 -->
