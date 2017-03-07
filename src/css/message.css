@@ -29,6 +29,7 @@
 }
 
 .comment-wrap, .comment-form {
+    margin-top: 0.4rem;
     border-radius: 0.03rem 0.03rem 0 0;
     border-top: 0.01rem solid #e8e8e8;
     border-bottom: 0.01rem solid #e8e8e8;
@@ -210,4 +211,31 @@
 
 .mainbody .is-empty p {
     font-size: 0.16rem;
+}
+
+.mainbody .page-num ul {
+    margin-left: 0.3rem;
+    margin-top: 0.05rem;
+}
+
+.mainbody .page-num ul li {
+    float: left;
+    padding-left: 0.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.mainbody .page-num ul li a {
+    display: block;
+    border: 1px solid #4cae4c;
+    color: #222;
+    width: 0.24rem;
+    height: 0.24rem;
+    text-align: center;
+    line-height: 0.24rem;
+}
+
+.mainbody .page-num ul li a:hover,
+.mainbody .page-num ul li a.selected {
+    background: #5cb85c;
+    border-color: #4cae4c;
 }
