@@ -16,7 +16,6 @@ if ($mysqli_result && $mysqli_result->num_rows) {
         $data[] = $rows;
     }
 }
-print_r( $data);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
