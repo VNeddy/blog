@@ -2,7 +2,7 @@ $(document).ready(function(){
     waterFall();
     // 模拟后台数据
     var dataInt = {"data": [{"src": "gallery-item-1.jpg"}, {"src": "gallery-item-2.jpg"}, {"src": "gallery-item-3.jpg"}, {"src": "gallery-item-4.jpg"}, {"src": "gallery-item-5.jpg"}, {"src": "gallery-item-6.jpg"}, {"src": "gallery-item-7.jpg"}, {"src": "gallery-item-8.jpg"}]};
-    $(window).scroll(function(){
+    $(window).on('scroll', function(){
         if (checkScrollSlide()) {
             $.each(dataInt.data, function(index, value) {
                 var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
@@ -12,6 +12,9 @@ $(document).ready(function(){
             waterFall();
         }
     });
+
+    // 每次加载页面触发scroll事件
+    $(window).trigger('scroll');
 });
 
 function waterFall() {
