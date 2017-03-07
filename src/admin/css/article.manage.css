@@ -1,0 +1,53 @@
+.wrap .mainbody .content {
+    position: relative;
+}
+
+.content table {
+    text-align: center;
+    margin-top: 0.4rem;
+    width: 100%;
+    font-size: 0.14rem;
+}
+
+.content table tr td,
+.content table tr th {
+    border: 1px solid #000;
+}
+
+/*.content table tr td[colspan] {
+    color: #f00;
+}*/
+
+.content table tr td a {
+    color: #333;
+}
+
+.content table tr td a:hover {
+    color: #666;
+}
+
+.content .page-num {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 0.1rem;
+}
+
+.content .page-num ul li {
+    display: inline-block;
+}
+
+.content .page-num ul li a {
+    color: #333;
+    display: block;
+    width: 0.24rem;
+    height: 0.24rem;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 0.24rem;
+    margin-left: 0.05rem;
+}
+
+.content .page-num ul li a:hover,
+.content .page-num ul li a.selected {
+    background: #666;
+}

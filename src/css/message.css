@@ -1,0 +1,213 @@
+.message-wrap {
+    z-index: 100;
+    width: 90%;
+    margin: 1rem auto 0;
+    padding-bottom: 0.2rem;
+    border: 0.01rem solid #ddd;
+    background-color: #fefefe;
+    box-shadow: 0.14rem 0.11rem 0.27rem #111;
+}
+
+.message-wrap article {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.message-wrap article h2 {
+    font-size: 0.5rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -0.55rem;
+    margin-left: -0.7rem;
+    margin-bottom: 0.1rem;
+    color: #222;
+}
+
+.message-wrap article p {
+    padding-top: 0.3rem;
+    font-size: 0.16rem;
+}
+
+.comment-wrap, .comment-form {
+    border-radius: 0.03rem 0.03rem 0 0;
+    border-top: 0.01rem solid #e8e8e8;
+    border-bottom: 0.01rem solid #e8e8e8;
+    padding: 0.20rem 0.25rem;
+}
+
+.comment-wrap > p {
+    display: block;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #f00;
+}
+
+.comment-wrap .comment {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.comment .user-avatar {
+    width: 10%;
+    /*height: 10%;*/
+    float: left;
+}
+
+.comment .user-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.comment .comment-info {
+    width: calc(90% - 0.2rem);
+    border: 0.01rem solid #e8e8e8;
+    padding: 0.04rem;
+    border-radius: 0.05rem;
+    float: right;
+}
+
+.comment-info .comment-header {
+    padding: 0 0.2rem;
+    line-height: 0.26rem;
+    background: #eff6f9;
+}
+
+.comment-header .user-name {
+    float: left;
+}
+
+.comment-header .comment-date {
+    float: right;
+}
+
+.comment-info .comment-comtent {
+    padding: 0.1rem;
+    line-height: 0.2rem;
+}
+
+.comment-form textarea {
+    outline: none;
+    width: 100%;
+    height: 1rem;
+    font-size: 0.16rem;
+    resize: none;
+    color: #555;
+    background-color: #fefefe;
+    border: 0.01rem solid #ccc;
+    border-radius: 0.04rem;
+    box-shadow: inset 0 0.01rem 0.01rem rgba(0, 0, 0, .075);
+}
+
+.comment-form input#message-button {
+    float: right;
+    margin-top: 0.1rem;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 0.06rem 0.12rem;
+    font-size: 0.14rem;
+    cursor: pointer;
+    border: 0.01rem solid transparent;
+    border-radius: 0.04rem;
+    outline: none;
+}
+
+.comment-form input#message-button:hover {
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.login-layer-wrap, .mainbody .is-empty-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 110;
+}
+
+.login-layer-wrap .login-layer, .mainbody .is-empty {
+    box-sizing: border-box;
+    width: 3rem;
+    height: 2.5rem;
+    position: absolute;
+    left: calc(50% - 1.5rem);
+    top: calc(50% - 2rem);
+    border-radius: 4px;
+    background-color: #fefefe;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.12);
+    padding: 0.15rem 0.5rem;
+}
+
+.login-layer-wrap .login-layer .group {
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.login-layer-wrap .login-layer .choose {
+    display: block;
+    margin: 0.1rem;
+    font-size: 0.14rem;
+}
+
+.login-layer-wrap .login-layer input[name="tmpuser"] {
+    outline-color: #08b5fb;
+    width: 100%;
+}
+
+.login-layer-wrap .login-layer span.error {
+    color: #f00;
+    position: absolute;
+    top: 1rem;
+}
+
+.login-layer-wrap .login-layer .layer-btn, .is-empty .is-empty-btn {
+    padding: 0.06rem 0.12rem;
+    font-size: 0.14rem;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+}
+
+.login-layer-wrap .login-layer .ok, .is-empty .is-empty-btn {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.login-layer-wrap .login-layer .ok:hover, .is-empty .is-empty-btn:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.login-layer-wrap .login-layer .cancel {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.login-layer-wrap .login-layer .cancel:hover {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+
+.mainbody .is-empty {
+    height: 1.2rem;
+    text-align: center;
+}
+
+.mainbody .is-empty p {
+    font-size: 0.16rem;
+}

@@ -1,0 +1,43 @@
+textarea {
+    outline: none;
+}
+
+.wrap .group {
+    position: relative;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.wrap .group label {
+    display: block;
+    margin: 0.3rem 0;
+    color: #222;
+    font-size: 0.16rem;
+}
+
+.wrap .content .group .error {
+    font-size: 0.14rem;
+    color: #f00;
+    position: absolute;
+    top: 0.2rem;
+    left: calc(50% - 0.5rem);
+}
+
+.wrap .content input {
+    display: block;
+    margin: 0 auto;
+}
+
+.wrap .content .button {
+    display: block;
+    margin: 0 auto;
+    width: 1rem;
+    height: 0.3rem;
+    background: #1161ee;
+    color: #fefefe;
+    font-size: 0.16rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    outline: none;
+}

@@ -1,0 +1,89 @@
+.mainbody {
+    background: #333;
+    min-height: 100%;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
+
+.login-html
+{
+    border-color: #1161ee;
+    width: 2.6rem;
+    padding: 0.2rem 0.3rem 0.2rem;
+    background: rgba(40, 57, 101, .9);
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 1.6rem);
+}
+
+.login-html h3
+{
+    font-size: 0.26rem;
+    text-align: center;
+    margin-top: 0;
+    color: #fff;
+}
+
+.login-html .login-form .group
+{
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.login-html .login-form .group .error
+{
+    position: absolute;
+    color: #f00;
+    top: 0.44rem;
+    left: 0.1rem;
+}
+
+.login-html .group:nth-child(1) .input, .login-html .group:nth-child(2) .input
+{
+    width: 100%;
+}
+
+.login-html .login-form .group .input
+{
+    border: none;
+    padding: 0.1rem 0 0.1rem 0.1rem;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, .1);
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.login-form .group .input + img {
+    padding-left: 0.1rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.login-form .group .button {
+    background: #1161ee;
+    font-size: 0.16rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.1rem 0 0.1rem 0.1rem;
+    width: 100%;
+}
+
+.mainbody footer
+{
+    width: 5rem;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 0.2rem;
+    left: calc(50% - 2.5rem);
+}
+
+.mainbody footer .copy {
+    font-size: 0.16rem;
+}

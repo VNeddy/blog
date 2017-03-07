@@ -1,0 +1,104 @@
+.mainbody {
+    height: 100%;
+}
+.banner {
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100% - 1rem);
+    text-align: center;
+}
+
+.inner {
+    padding-top: 15%;
+    height: 50%;
+}
+
+.inner .myname {
+    display: block;
+    font-size: 0.4rem;
+    color: #fff;
+    padding: 0.2rem;
+    width: 3rem;
+    margin: 0 auto;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.inner .myword {
+    height: 50%;
+    display: block;
+    font-size: 0.2rem;
+    color: #fff;
+    padding-top: 0.3rem;
+    margin: 0 auto;
+}
+
+.enter-btn {
+    position: relative;
+    height: 35%;
+    font-size: 0.2rem;
+    letter-spacing: 0.04rem;
+    color: #fff;
+    padding: 0.14rem 0.28rem;
+    border: 0.02rem solid #fff;
+    border-radius: 0.1rem;
+}
+
+.enter-btn .line {
+    display: block;
+    position: absolute;
+    -webkit-transition: .4s ease;
+            transition: .4s ease;
+}
+
+.enter-btn:hover .line {
+    background: #fff;
+}
+
+.enter-btn .line-top {
+    height: 0.02rem;
+    width: 0;
+    left: -110%;
+    top: -0.02rem;
+}
+
+.enter-btn:hover .line-top {
+    width: 88%;
+    left: 0.06rem;
+}
+
+.enter-btn .line-right {
+    height: 0;
+    width: 0.02rem;
+    top: -110%;
+    right: -0.02rem;
+}
+
+.enter-btn:hover .line-right {
+    height: 77%;
+    top: 0.06rem;
+}
+
+.enter-btn .line-bottom {
+    height: 0.02rem;
+    width: 0;
+    right: -110%;
+    bottom: -0.02rem;
+}
+
+.enter-btn:hover .line-bottom {
+    width: 88%;
+    right: 0.06rem;
+}
+
+.enter-btn .line-left {
+    height: 0;
+    width: 0.02rem;
+    bottom: -110%;
+    left: -0.02rem;
+}
+
+.enter-btn:hover .line-left {
+    height: 77%;
+    bottom: 0.06rem;
+}

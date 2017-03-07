@@ -1,0 +1,220 @@
+/**
+ * 页面样式
+ */
+
+
+/**
+ * 默认设置
+ */
+
+html {
+    font-size: 625%;
+    color: #222;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/**
+ * 工具样式
+ */
+
+.clearfix::before,
+/*before防止浏览器顶部空白崩溃*/
+
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+
+/**
+ * 自定义样式
+ */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.12rem;
+    line-height: 1.5;
+    background: #ddd url(../img/banner.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.wrap {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+/**
+ * 页头样式
+ */
+
+.height {
+    height: 100%;
+}
+
+.min-height {
+    min-height: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(../img/banner.jpg) no-repeat center fixed;
+    background-size: cover;
+    z-index: 100;
+}
+
+header nav {
+    background: rgba(0, 0, 0, 0.4);
+    padding-bottom: 0.1rem;
+}
+
+header .logo {
+    float: left;
+    padding-left: 0.3rem;
+    padding-top: 0.18rem;
+    padding-bottom: 0.18rem;
+}
+
+header .logo img {
+    vertical-align: middle;
+}
+
+header nav ul {
+    float: right;
+    font-size: 0.16rem;
+}
+
+header nav ul li {
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+}
+
+header nav ul li a {
+    display: inline-block;
+    color: #fff;
+    line-height: 0.5rem;
+    margin-right: 0.2rem
+}
+
+header nav ul li a:hover {
+    border-bottom: 4px solid #fff;
+}
+
+.current {
+    border-bottom: 4px solid #fff;
+}
+
+
+/**
+ * 内容样式
+ */
+
+.mainbody {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 0.7rem;
+    margin-bottom: 0.2rem;
+}
+
+.mainbody .content {
+    width: 77%;
+    float: left;
+    background: #fff;
+}
+
+
+/**
+ * 页脚样式
+ */
+
+/*footer {
+    margin-top: 0.2rem;
+    width: 100%;
+    min-height: 1rem;
+    text-align: center;
+    color: #fff;
+    background: #333;
+}
+
+footer .copy {
+    font-size: 0.16rem;
+    line-height: 1rem;
+}
+
+.foot {
+    display: table;
+    min-height: 15%;
+    margin: 0;
+}
+
+.foot .copy {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 0;
+}*/
+
+
+footer {
+    float: right;
+    margin-right: 0.5rem;
+    height: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+footer .copy {
+    font-size: 0.16rem;
+    color: #fff;
+}
+
+/**
+ * 返回顶部
+ */
+
+#scroll-top
+{
+    position: fixed;
+    right: 0.3rem;
+    bottom: 0.5rem;
+    color: #fff;
+    display: none;
+    font-size: 0.16rem;
+    padding: 0.1rem;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #888;
+    background: rgba(0, 0, 0, .2);
+}

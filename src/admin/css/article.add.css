@@ -1,0 +1,51 @@
+.wrap .content .group {
+    margin: 0.15rem 0;
+    position: relative;
+}
+
+.wrap .content .group label {
+    display: inline-block;
+    width: 1.5rem;
+    color: #222;
+    font-size: 0.16rem;
+    padding-left: 0.5rem;
+}
+
+.wrap .content .group .error {
+    font-size: 0.14rem;
+    color: #f00;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.5rem;
+}
+
+.wrap .content .flag {
+    /*display: table;*/
+}
+
+.wrap .content .flag label {
+    /*display: table-cell;*/
+    vertical-align: top;
+}
+
+.wrap .content .button {
+    display: block;
+    margin: 0 auto;
+    width: 1rem;
+    height: 0.3rem;
+    background: #1161ee;
+    color: #fefefe;
+    font-size: 0.16rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    outline: none;
+}
+
+textarea {
+    outline: none;
+}
+
+.wrap .content input {
+    outline: none;
+}

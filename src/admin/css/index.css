@@ -1,0 +1,12 @@
+.content .welcome {
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+}
+
+.content .welcome p {
+    font-size: 0.16rem;
+}
+
+.content .welcome p+p {
+    text-indent:2em;
+}

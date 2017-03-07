@@ -1,0 +1,70 @@
+.article-wrap {
+    z-index: 100;
+    width: 90%;
+    margin: 1rem auto 0;
+    padding-bottom: 0.2rem;
+    border: 0.01rem solid #ddd;
+    background-color: #fefefe;
+    box-shadow: 0.14rem 0.11rem 0.27rem #111;
+}
+
+.article-wrap .article-info {
+    font-family: 'Helvetica Neue', sans-serif;
+        margin: 0.1rem 0.5rem 0.1rem 0.1rem;
+    float: right;
+    color: #979797;
+}
+
+.article-info .author {
+    background: url(../img/author.jpg) no-repeat;
+    padding-left: 0.2rem;
+}
+
+.article-info .author a {
+    color: #1e90ff;
+}
+
+.article-info .date {
+    background: url(../img/date.jpg) no-repeat;
+    padding: 0.03rem 0 0.01rem 0.23rem;
+}
+
+.article-wrap article {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.line-bg {
+    clear: both;
+    height: 0.2rem;
+    background: url(../img/line.jpg) top left repeat-x;
+}
+
+.article-wrap article h2 {
+    font-size: 0.5rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -1.35rem;
+    margin-left: -1rem;
+    color: #222;
+}
+
+.article-wrap article p {
+    padding-top: 0.3rem;
+    font-size: 0.16rem;
+}
+
+.recommend {
+    border-top: 0.01rem solid #e8e8e8;
+    border-bottom: 0.01rem solid #e8e8e8;
+    padding: 0.1rem;
+}
+
+.recommend ul {
+    padding-left: 0.2rem;
+}
+
+.recommend ul li a{
+    color: #222;
+    font-size: 0.14rem;
+}

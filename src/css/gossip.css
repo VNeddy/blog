@@ -1,0 +1,80 @@
+.mainbody {
+    padding-top: 1rem;
+    min-height: calc(100% - 2.2rem);
+}
+
+.gossip {
+    box-shadow: rgba(255, 255, 255, 0.0980392) 0rem 0.01rem 0rem, rgba(214, 214, 214, 0.701961) 0rem 0.01rem 0.01rem inset;
+    width: 80%;
+    position: relative;
+    font-size: 0.14rem;
+    font-family: 宋体;
+    background: rgb(248, 248, 248);
+    border-radius: 0.05rem;
+    padding: 0.2rem 0rem;
+    margin: 0.2rem 0rem;
+}
+
+.gossip:hover {
+    background: #f4f2f2;
+    color: #333;
+    text-shadow: #f7f7f7 1px 1px 1px;
+}
+
+.gossip:hover::before {
+    border-color:transparent transparent transparent #CECCCD
+}/* 三角形 */
+
+.gossip:hover::after {
+    border:#fff 2px solid;background:#999;
+}/* 圆形 */
+
+.gossip:before {
+    content: "";
+    width: 0rem;
+    height: 0rem;
+    border-style: solid;
+    border-width: 0rem 0 0.2rem 0.22rem;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    left: 100%;
+    top: 30%;
+}
+
+.gossip:after {
+    content: "";
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 103%;
+    top: 25%;
+    background: #CCCCCE;
+    border: 0.02rem solid #fff;
+    transition: all 0.5s;
+}
+
+.gossip p {
+    margin: 0 0.2rem 0 0.2rem;
+}
+
+.gossip strong {
+    font-weight: normal;
+    color: #f00;
+    padding-left: 0.5rem;
+    font-size: 0.16rem;
+}
+
+.data-view {
+    position: absolute;
+    left: 105%;
+    top: 30%;
+    width: 20%;
+    line-height: 0.35rem;
+    background: #5EA51B;
+    border-radius: 0 0.3rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.14rem;
+}

@@ -1,0 +1,22 @@
+.mainbody {
+    width: 90%;
+    padding-top: 1rem;
+    min-height: calc(100% - 2.2rem);
+}
+
+.mainbody .box {
+    float: left;
+    padding: 0.1rem;
+}
+
+.mainbody .box .pic {
+    padding: 0.1rem;
+    border: 0.01rem solid #ccc;
+    border-radius: 0.06rem;
+    box-shadow: 0 0 0.05rem #ccc;
+}
+
+.mainbody .box .pic img {
+    width: 2rem;
+    height: auto;
+}

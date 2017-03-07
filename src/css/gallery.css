@@ -1,0 +1,40 @@
+.gallery {
+    background: #fefefe !important;
+    border-top: 5px solid #19beb6;
+}
+
+.gallery-heading {
+    border-left: 0.04rem solid #19beb6;
+    padding-left: 0.2rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+}
+
+.gallery-heading h3 {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.gallery-heading h4 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #19beb6;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.view-more-wrap {
+    width: 100%;
+    margin: 0.15rem 0;
+}
+
+.view-more {
+    background-color: #19beb6;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0px;
+    padding: 8px 25px;
+}
