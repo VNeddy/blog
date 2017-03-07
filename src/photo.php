@@ -60,3 +60,5 @@ print_r( $data);
 </body>
 
 </html>
+
+<?php $mysqli->close(); ?>
