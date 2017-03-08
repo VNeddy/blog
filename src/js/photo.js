@@ -1,14 +1,14 @@
 $(document).ready(function(){
-    waterFall();
+    var timer = setInterval(waterFall,100);
     var number = 0;
     var flag = true;
     $(window).on('scroll', function(){
         if (checkScrollSlide() && flag) {
             number++;
             $.ajax({
-                async: false,
                 type: "GET",
                 url: "photo.php?number=" + number,
+                async: false,
                 dataType: "json",
                 success: function(dataInt) {
                     if (dataInt.status) {
@@ -17,11 +17,11 @@ $(document).ready(function(){
                             var oPic = $('<div>').addClass('pic').appendTo($(oBox));
                             $('<img>').attr('src', value.url).appendTo(oPic);
                         });
-                        waterFall();
                     } else {
                         flag = false;
-                        waterFall();
-                        console.log(flag);
+                        setTimeout(function() {
+                            clearInterval(timer);
+                        },1000);
                     }
                 },
             });
