@@ -43,7 +43,7 @@ $(document).ready(function() {
     //此标志用于标志是否提交，防止多次提交
     var flag = false;
     //监测是否提交
-    $('#add-comment').submit(function(e) {
+    $('#add-message').submit(function(e) {
         //阻止表单的自动提交
         e.preventDefault();
         if (flag) return false;
@@ -51,7 +51,7 @@ $(document).ready(function() {
         $('.ok').val('确认...');
         $('span.error').remove();
         //通过Ajax发送数据
-        $.post('message.add.handle.php', $(this).serialize(), function(msg) {
+        $.post('article_message.add.handle.php', $(this).serialize(), function(msg) {
 
             flag = false;
             $('.ok').val('确认');

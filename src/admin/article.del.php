@@ -12,9 +12,11 @@ require_once ROOT_PATH."/includes/connect.inc.php";
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM article WHERE id=$id";
+$sql1 = "DELETE FROM article WHERE id=$id";
+// 删除文章的同时将留言删除
+$sql2 = "DELETE FROM article_message WHERE article_id=$id";
 
-if ($mysqli->query($sql)) {
+if ($mysqli->query($sql1) && $mysqli->query($sql2)) {
     echo "<script>alert('删除文章成功');window.location.href='article.manage.php'</script>";
 } else {
     echo "<script>alert('删除文章失败');window.location.href='article.manage.php'</script>";
