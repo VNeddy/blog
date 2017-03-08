@@ -10,7 +10,7 @@ $(document).ready(function(){
             request.send();
             request.onreadystatechange = function() {
                 if (request.readyState === 4 && request.status === 200) {
-                    dataInt = eval('('+request.responseText+')');
+                    dataInt = JSON.parse(request.responseText);
                     if (dataInt.status) {
                         $.each(dataInt.data, function(index, value) {
                             var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
