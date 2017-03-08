@@ -3,14 +3,12 @@ $(document).ready(function(){
     var number = 0;
     $(window).on('scroll', function(){
         if (checkScrollSlide()) {
-            var dataInt;
-            var request = new XMLHttpRequest();
             number++;
-            request.open("GET","photo.php?number="+number);
-            request.send();
-            request.onreadystatechange = function() {
-                if (request.readyState === 4 && request.status === 200) {
-                    dataInt = JSON.parse(request.responseText);
+            $.ajax({
+                type: "GET",
+                url: "photo.php?number=" + number,
+                dataType: "json",
+                success: function(dataInt) {
                     if (dataInt.status) {
                         $.each(dataInt.data, function(index, value) {
                             var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
@@ -19,8 +17,8 @@ $(document).ready(function(){
                         });
                         waterFall();
                     }
-                }
-            }
+                },
+            });
         }
     });
 });
