@@ -9,7 +9,28 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
 // 引入连接数据库文件
 require_once ROOT_PATH."/includes/connect.inc.php";
 
-$sql = "SELECT * FROM gossip ORDER BY pubTime DESC";
+
+$searchSize = 7;
+
+
+if (isset($_GET['number']) && !empty($_GET['number'])) {
+    $searchStart = $_GET['number'] * $searchSize;
+    $sql = "SELECT * FROM gossip ORDER BY pubTime DESC LIMIT $searchStart,$searchSize;";
+    $mysqli_result = $mysqli->query($sql);
+    if ($mysqli_result && $mysqli_result->num_rows) {
+        while ($rows = $mysqli_result->fetch_assoc()) {
+            $rows['pubTime'] = date("Y-m-d H:i:s",$rows['pubTime']);
+            $data[] = $rows;
+        }
+        echo '{"status":1,"data":'.json_encode($data).'}';
+    } else {
+        echo '{"status":0}';
+    }
+    exit;
+}
+
+
+$sql = "SELECT * FROM gossip ORDER BY pubTime DESC LIMIT 0,$searchSize;";
 
 $mysqli_result = $mysqli->query($sql);
 
@@ -74,6 +95,7 @@ EOF;
     </div>
     <script src="js/jquery.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/gossip.js" charset="utf-8"></script>
 </body>
 
 </html>
