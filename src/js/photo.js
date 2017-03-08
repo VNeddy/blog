@@ -1,10 +1,12 @@
 $(document).ready(function(){
     waterFall();
     var number = 0;
+    var flag = true;
     $(window).on('scroll', function(){
-        if (checkScrollSlide()) {
+        if (checkScrollSlide() && flag) {
             number++;
             $.ajax({
+                async: false,
                 type: "GET",
                 url: "photo.php?number=" + number,
                 dataType: "json",
@@ -16,6 +18,10 @@ $(document).ready(function(){
                             $('<img>').attr('src', value.url).appendTo(oPic);
                         });
                         waterFall();
+                    } else {
+                        flag = false;
+                        waterFall();
+                        console.log(flag);
                     }
                 },
             });
@@ -58,6 +64,7 @@ function waterFall() {
     });
 }
 
+// 检查是否需要加载图片
 function checkScrollSlide() {
     var $lastbox = $(".mainbody").find('.box').last();
     var lastboxH = $lastbox.offset().top + $lastbox.outerHeight();

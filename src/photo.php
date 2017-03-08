@@ -8,7 +8,7 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
 // 引入连接数据库文件
 require_once ROOT_PATH."/includes/connect.inc.php";
 
-$searchSize = 8;
+$searchSize = 10;
 
 
 if (isset($_GET['number']) && !empty($_GET['number'])) {
