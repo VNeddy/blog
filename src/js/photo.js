@@ -1,20 +1,28 @@
 $(document).ready(function(){
     waterFall();
-    // 模拟后台数据
-    var dataInt = {"data": [{"src": "gallery-item-1.jpg"}, {"src": "gallery-item-2.jpg"}, {"src": "gallery-item-3.jpg"}, {"src": "gallery-item-4.jpg"}, {"src": "gallery-item-5.jpg"}, {"src": "gallery-item-6.jpg"}, {"src": "gallery-item-7.jpg"}, {"src": "gallery-item-8.jpg"}]};
+    var number = 0;
     $(window).on('scroll', function(){
         if (checkScrollSlide()) {
-            $.each(dataInt.data, function(index, value) {
-                var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
-                var oPic = $('<div>').addClass('pic').appendTo($(oBox));
-                $('<img>').attr('src', 'img/gallery/' + value.src).appendTo(oPic);
-            });
-            waterFall();
+            var dataInt;
+            var request = new XMLHttpRequest();
+            number++;
+            request.open("GET","photo.php?number="+number);
+            request.send();
+            request.onreadystatechange = function() {
+                if (request.readyState === 4 && request.status === 200) {
+                    dataInt = eval('('+request.responseText+')');
+                    if (dataInt.status) {
+                        $.each(dataInt.data, function(index, value) {
+                            var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
+                            var oPic = $('<div>').addClass('pic').appendTo($(oBox));
+                            $('<img>').attr('src', value.url).appendTo(oPic);
+                        });
+                        waterFall();
+                    }
+                }
+            }
         }
     });
-
-    // 每次加载页面触发scroll事件
-    $(window).trigger('scroll');
 });
 
 function waterFall() {

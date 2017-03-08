@@ -8,7 +8,25 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
 // 引入连接数据库文件
 require_once ROOT_PATH."/includes/connect.inc.php";
 
-$sql = "SELECT id,url FROM photo ORDER BY id ASC LIMIT 0,8;";
+$searchSize = 8;
+
+
+if (isset($_GET['number']) && !empty($_GET['number'])) {
+    $searchStart = $_GET['number'] * $searchSize;
+    $sql = "SELECT id,url FROM photo ORDER BY id ASC LIMIT $searchStart,$searchSize;";
+    $mysqli_result = $mysqli->query($sql);
+    if ($mysqli_result && $mysqli_result->num_rows) {
+        while ($rows = $mysqli_result->fetch_assoc()) {
+            $data[] = $rows;
+        }
+        echo '{"status":1,"data":'.json_encode($data).'}';
+    } else {
+        echo '{"status":0}';
+    }
+    exit;
+}
+
+$sql = "SELECT id,url FROM photo ORDER BY id ASC LIMIT 0,$searchSize;";
 $mysqli_result = $mysqli->query($sql);
 
 if ($mysqli_result && $mysqli_result->num_rows) {
