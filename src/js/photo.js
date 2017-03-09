@@ -5,6 +5,7 @@ $(document).ready(function(){
     $(window).on('scroll', function(){
         if (checkScrollSlide() && flag) {
             number++;
+            console.log(number);
             $.ajax({
                 type: "GET",
                 url: "photo.php?number=" + number,
@@ -66,9 +67,6 @@ function waterFall() {
 
 // 检查是否需要加载图片
 function checkScrollSlide() {
-    var $lastbox = $(".mainbody").find('.box').last();
-    var lastboxH = $lastbox.offset().top + $lastbox.outerHeight();
-    var scrollTop = $(window).scrollTop();
-    var documentH = $(window).height();
-    return lastboxH < (scrollTop + documentH)?true:false;
+    // （滚动高度+当前可视高度）/ 总高度 >= 0.85 即滚动到总界面的85%时加载
+    return ($(document).scrollTop()+$(window).height())/$(document).height() >= 0.85 ? true:false;
 }
