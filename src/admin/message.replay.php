@@ -19,9 +19,10 @@ $current = "replay";
 $res = Filter::validate($arr,$current);
 if ($res) {
     $arr['message_id'] = $_GET['id'];
-    $sql = "UPDATE message SET replay_content=? WHERE id={$arr['message_id']};";
+    $arr['replayTime'] = time();
+    $sql = "UPDATE message SET replay_content=?,replayTime=? WHERE id={$arr['message_id']};";
     $mysqli_stmt = $mysqli->prepare($sql);
-    $mysqli_stmt->bind_param('s',$arr['content']);
+    $mysqli_stmt->bind_param('si',$arr['content'],$arr['replayTime']);
     $mysqli_stmt->execute();
     echo json_encode(array('status'=>1));
 } else {

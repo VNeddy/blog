@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS message(
 	tmpuser CHAR(50) NOT NULL,
 	sex CHAR(6) NOT NULL,
 	pubTime INT UNSIGNED NOT NULL,
+	replayTime INT UNSIGNED NOT NULL,
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
@@ -37,6 +38,7 @@ CREATE TABLE IF NOT EXISTS article_message(
 	tmpuser CHAR(50) NOT NULL,
 	sex CHAR(6) NOT NULL,
 	pubTime INT UNSIGNED NOT NULL,
+	replayTime INT UNSIGNED NOT NULL,
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 

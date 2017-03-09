@@ -19,14 +19,14 @@ $_pagesize = 12;
 $_pagenum = ($_page - 1) * $_pagesize;
 
 // 首先要得到所有的数据总和
-$mysqli_result_1 = $mysqli->query("SELECT id FROM message ORDER BY pubTime DESC");
+$mysqli_result_1 = $mysqli->query("SELECT id FROM message");
 $_num = $mysqli_result_1->num_rows;
 $_count_page = ceil($_num / $_pagesize);
 if ($_count_page == 1) {
     $_count_page = 0;
 }
 // 显示分页内容内容
-$sql = "SELECT * FROM message ORDER BY pubTime ASC LIMIT $_pagenum,$_pagesize";
+$sql = "SELECT * FROM message ORDER BY pubTime DESC LIMIT $_pagenum,$_pagesize";
 
 $mysqli_result = $mysqli->query($sql);
 
