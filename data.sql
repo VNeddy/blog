@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS gossip(
 CREATE TABLE IF NOT EXISTS message(
 	id INT UNSIGNED AUTO_INCREMENT,
 	content TEXT NOT NULL,
-	replay_content TEXT NOT NULL,
+	replay_content TEXT,
 	tmpuser CHAR(50) NOT NULL,
 	sex CHAR(6) NOT NULL,
 	pubTime INT UNSIGNED NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS article_message(
 	id INT UNSIGNED AUTO_INCREMENT,
 	article_id INT NOT NULL,
 	content TEXT NOT NULL,
-	replay_content TEXT NOT NULL,
+	replay_content TEXT,
 	tmpuser CHAR(50) NOT NULL,
 	sex CHAR(6) NOT NULL,
 	pubTime INT UNSIGNED NOT NULL,
