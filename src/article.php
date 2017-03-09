@@ -49,7 +49,7 @@ if ($_count_page == 1) {
     $_count_page = 0;
 }
 // 显示分页内容
-$sql3 = "SELECT * FROM article_message WHERE article_id={$id} ORDER BY pubTime ASC LIMIT $_pagenum,$_pagesize";
+$sql3 = "SELECT * FROM article_message WHERE article_id={$id} ORDER BY pubTime DESC LIMIT $_pagenum,$_pagesize";
 
 $mysqli_result_3 = $mysqli->query($sql3);
 
@@ -133,6 +133,17 @@ if ($mysqli_result_3 && $mysqli_result_3->num_rows) {
                             </div>
                             <div class="comment-comtent">
                                 <span><?php echo $val['content']; ?></span>
+                                <?php if ($val['replay_content'] != null) { ?>
+                                <div class="comment-info">
+                                    <div class="comment-header clearfix">
+                                        <span class="user-name">from: admin</span>
+                                        <span class="comment-date"><?php echo date("Y-m-d H:i:s",$val['replayTime']); ?></span>
+                                    </div>
+                                    <div class="comment-comtent">
+                                        <span><?php echo $val['replay_content']; ?></span>
+                                    </div>
+                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
