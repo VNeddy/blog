@@ -2,7 +2,7 @@
 // 定义个常量，用来授权调用includes里的常亮
 define('IN_TG',true);
 // 定义个常量，用来指定本页内容
-define('SCRIPT','article.manage');
+define('SCRIPT','message.manage');
 // 引入公共文件，转换成硬路径，加快速度
 require_once dirname(__FILE__)."/includes/common.inc.php";
 // 引入连接数据库文件
@@ -32,7 +32,7 @@ $countpage = ceil($num / $pagesize);
 if ($countpage == 1) {
     $countpage = 0;
 }
-$sql = "SELECT id,tmpuser,sex,content,pubTime FROM message ORDER BY pubTime DESC LIMIT {$pagenum},{$pagesize}";
+$sql = "SELECT id,tmpuser,content,replay_content,pubTime FROM message ORDER BY pubTime DESC LIMIT {$pagenum},{$pagesize}";
 $mysqli_result = $mysqli->query($sql);
 
 if ($mysqli_result && $mysqli_result->num_rows) {
@@ -63,8 +63,8 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                         <tr>
                             <th>留言时间</th>
                             <th>昵称</th>
-                            <th>性别</th>
                             <th>内容</th>
+                            <th>我的回复</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -74,18 +74,10 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                                 <tr>
                                     <td><?php echo date("Y-m-d H:i:s",$val['pubTime']); ?></td>
                                     <td><?php echo $val['tmpuser']; ?></td>
-                                    <td><?php
-                                    if ($val['sex'] == "male") {
-                                        echo "男";
-                                    } else if ($val['sex'] == "female") {
-                                        echo "女";
-                                    } else {
-                                        echo "出错";
-                                    }
-                                    ?></td>
                                     <td><?php echo $val['content']; ?></td>
+                                    <td><?php echo $val['replay_content']; ?></td>
                                     <td>
-                                        <a href="javascript:;">回复</a>
+                                        <a href="javascript:;" class="replay" id="<?php echo $val['id']; ?>">回复</a>
                                         <span>|</span>
                                         <a href="message.del.php?id=<?php echo $val['id']; ?>">删除</a>
                                     </td>
@@ -107,13 +99,29 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                     </ul>
                 </div>
             </div>
+
+            <div class="login-layer-wrap">
+                <form id="replay_message" method="post">
+                    <div class="login-layer">
+                        <h2>回复内容</h2>
+                        <div class="group">
+                            <textarea name="content" placeholder="说点什么吧" id="replay_content"></textarea>
+                            <label for="content" class="error"></label>
+                        </div>
+                        <div class="group">
+                            <input type="submit" name="ok" value="确认" class="ok layer-btn">
+                            <input type="button" name="cancel" value="取消" class="cancel layer-btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <!-- 页脚开始 -->
         <?php require_once ROOT_PATH."includes/footer.inc.php"; ?>
         <!-- 页脚结束 -->
     </div>
     <script src="../js/jquery.js" charset="utf-8"></script>
-    <script src="js/main.js" charset="utf-8"></script>
+    <script src="js/message.manage.js" charset="utf-8"></script>
 </body>
 </html>
 <?php $mysqli->close(); ?>

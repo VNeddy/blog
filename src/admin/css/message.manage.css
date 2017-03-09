@@ -1,0 +1,126 @@
+.wrap .mainbody .content {
+    position: relative;
+}
+
+.content table {
+    text-align: center;
+    margin-top: 0.4rem;
+    width: 100%;
+    font-size: 0.14rem;
+}
+
+.content table tr td,
+.content table tr th {
+    border: 1px solid #000;
+}
+
+/*.content table tr td[colspan] {
+    color: #f00;
+}*/
+
+.content table tr td a {
+    color: #333;
+}
+
+.content table tr td a:hover {
+    color: #666;
+}
+
+.content .page-num {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 0.1rem;
+}
+
+.content .page-num ul li {
+    display: inline-block;
+}
+
+.content .page-num ul li a {
+    color: #333;
+    display: block;
+    width: 0.24rem;
+    height: 0.24rem;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 0.24rem;
+    margin-left: 0.05rem;
+}
+
+.content .page-num ul li a:hover,
+.content .page-num ul li a.selected {
+    background: #666;
+}
+
+.mainbody .login-layer-wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 101;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.mainbody .login-layer-wrap .login-layer {
+    width: 3rem;
+    height: 2.5rem;
+    position: absolute;
+    top: calc(50% - 2rem);
+    left: calc(50% - 1.25rem);
+    background: #fefefe;
+    border-radius: 0.04rem;
+    box-shadow: 0.01rem 0.02rem 0.04rem 0 rgba(0, 0, 0, 0.12);
+    padding: 0.15rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.mainbody .login-layer-wrap .login-layer .group {
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.mainbody .login-layer-wrap .login-layer #replay_content {
+    resize: none;
+    width: 2rem;
+    height: 0.8rem;
+}
+
+.mainbody .login-layer-wrap .login-layer .error {
+    color: #f00;
+    position: absolute;
+    top: 1.6rem;
+    left: 0.5rem;
+}
+
+.mainbody .login-layer-wrap .login-layer .layer-btn {
+    padding: 0.06rem 0.12rem;
+    cursor: pointer;
+    border-radius: 0.04rem;
+    border: 1px solid transparent;
+}
+
+.mainbody .login-layer-wrap .login-layer .ok {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.mainbody .login-layer-wrap .login-layer .cancel {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.mainbody .login-layer-wrap .login-layer .cancel:hover {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+
+.mainbody .login-layer-wrap .login-layer .ok:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
