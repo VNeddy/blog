@@ -32,7 +32,7 @@ $countpage = ceil($num / $pagesize);
 if ($countpage == 1) {
     $countpage = 0;
 }
-$sql = "SELECT id,tmpuser,sex,content,pubTime FROM message ORDER BY pubTime ASC LIMIT {$pagenum},{$pagesize}";
+$sql = "SELECT id,tmpuser,sex,content,pubTime FROM message ORDER BY pubTime DESC LIMIT {$pagenum},{$pagesize}";
 $mysqli_result = $mysqli->query($sql);
 
 if ($mysqli_result && $mysqli_result->num_rows) {
@@ -85,7 +85,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                                     ?></td>
                                     <td><?php echo $val['content']; ?></td>
                                     <td>
-                                        <a href="message.replay.php?id=<?php echo $val['id']; ?>">回复</a>
+                                        <a href="javascript:;">回复</a>
                                         <span>|</span>
                                         <a href="message.del.php?id=<?php echo $val['id']; ?>">删除</a>
                                     </td>
