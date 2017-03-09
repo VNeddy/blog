@@ -77,6 +77,17 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                                 </div>
                                 <div class="comment-comtent">
                                     <span><?php echo $val['content']; ?></span>
+                                    <?php if ($val['replay_content'] != null) { ?>
+                                    <div class="comment-info">
+                                        <div class="comment-header clearfix">
+                                            <span class="user-name">from: admin</span>
+                                            <span class="comment-date"><?php echo date("Y-m-d H:i:s",$val['replayTime']); ?></span>
+                                        </div>
+                                        <div class="comment-comtent">
+                                            <span><?php echo $val['replay_content']; ?></span>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
