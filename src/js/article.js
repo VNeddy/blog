@@ -67,9 +67,14 @@ $(document).ready(function() {
                     // 是第一条删除信息后显示
                     $('.comment-wrap').find('p').remove();
                     $(msg.html).hide().insertBefore('#insert').slideDown();
+                    var message_num = $('#message_num').html();
+                    $('#message_num').html(message_num+1);
                 } else {
                     // 不是第一条直接显示
                     $(msg.html).hide().insertBefore('#insert').slideDown();
+                    var message_num = parseInt($('#message_num').html());
+                    $('#message_num').html(message_num+1);
+                    console.log( message_num);
                 }
             } else {
                 $.each(msg.errors, function(k, v) {
