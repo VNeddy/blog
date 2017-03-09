@@ -1,13 +1,12 @@
 $(document).ready(function(){
-    var number = 0;
+    var number = 1;
     var flag = true;
     $(window).on('scroll', function(){
         if (checkScrollSlide() && flag) {
-            number++;
             $.ajax({
                 type: "GET",
                 url: "gossip.php?number=" + number,
-                async: false,
+                // async: false,
                 dataType: "json",
                 success: function(dataInt) {
                     if (dataInt.status) {
@@ -16,6 +15,7 @@ $(document).ready(function(){
                             var oP = $('<p>').html(value.content).appendTo($(oBox));
                             $('<span>').addClass('data-view').html(value.pubTime).appendTo(oP);
                         });
+                        number++;
                     } else {
                         flag = false;
                     }
