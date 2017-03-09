@@ -10,7 +10,7 @@ if (!defined('IN_TG')) {
     <h3><a href="index.php">后台管理</a></h3>
     <ul>
         <li><a href="article.manage.php">管理文章</a></li>
-        <li><a href="article.manage.php">管理文章评论</a></li>
+        <li><a href="article.replay.php">管理文章评论</a></li>
         <li><a href="article.add.php">发布文章</a></li>
         <li><a href="gossip.manage.php">管理说说</a></li>
         <li><a href="gossip.add.php">发布说说</a></li>
