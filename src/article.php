@@ -118,7 +118,7 @@ if ($mysqli_result_3 && $mysqli_result_3->num_rows) {
                 <!-- 相关文章推荐结束 -->
                 <!-- 文章评论展示开始 -->
                 <div class="comment-wrap">
-                    <h3>评论这篇文章（<span><?php echo $_num; ?></span>）</h3>
+                    <h3>评论这篇文章（<span id="message_num"><?php echo $_num; ?></span>）</h3>
                     <?php if (is_array(@$message_data)) {
                 foreach (@$message_data as $val) { ?>
 
