@@ -38,7 +38,7 @@ class Filter {
             $data['author'] = trim($data['author']);
         }
         //过滤说说以及个人简介
-        if ($current == "gossip" || $current == "about") {
+        if ($current == "gossip" || $current == "about" || $current == "replay") {
             if (!$data['content'] = filter_input(INPUT_POST, 'content', FILTER_CALLBACK, array('options'=>'Filter::validate_str'))) {
                 $errors['content'] = '请输入合法内容';
             }
