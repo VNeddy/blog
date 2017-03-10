@@ -62,22 +62,15 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                         </div>
                     </div>
                 <?php } } ?>
-                <!-- 遮罩层开始 -->
-                <div class="lightbox-wrap"></div>
-                <!-- 遮罩层结束 -->
                 <!-- 图片弹出层开始 -->
-                <div class="lightbox">
-                    <div class="lightbox-view">
-                        <span class="lightbox-btn lightbox-btn-prev lightbox-btn-prev-show"></span>
-                        <img class="lightbox-img" src="img/photo/4.jpg">
-                        <span class="lightbox-btn lightbox-btn-next lightbox-btn-next-show"></span>
-                    </div>
-                    <div class="lightbox-caption">
-                        <div class="lightbox-caption-area">
-                            <p class="pic-title">图片标题</p>
-                            <span class="pic-index">当前索引：1/4</span>
+                <div class="lightbox-wrap">
+                    <div class="lightbox">
+                        <div class="lightbox-view">
+                            <span class="lightbox-btn lightbox-btn-prev lightbox-btn-prev-show"></span>
+                            <img class="lightbox-img" src="img/photo/4.jpg">
+                            <span class="lightbox-btn lightbox-btn-next lightbox-btn-next-show"></span>
+                            <div class="lightbox-close-btn lightbox-close-btn-show"></div>
                         </div>
-                        <div class="lightbox-close-btn"></div>
                     </div>
                 </div>
                 <!-- 图片弹出层结束 -->
