@@ -14,9 +14,95 @@
     border: 0.01rem solid #ccc;
     border-radius: 0.06rem;
     box-shadow: 0 0 0.05rem #ccc;
+    cursor: pointer;
 }
 
 .mainbody .box .pic img {
     width: 2rem;
     height: auto;
+}
+
+.mainbody .lightbox-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.mainbody .lightbox {
+    position: absolute;
+    left: calc(50% - 1.5rem);
+    top: calc(50% - 1.5rem);
+    width: 3rem;
+    z-index: 1001;
+}
+
+.lightbox .lightbox-view {
+    border: 5px solid #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    background: #fff url(../img/loading.gif) no-repeat center center;
+}
+
+.lightbox .lightbox-view .lightbox-img {
+    display: block;
+    width: 100%;
+}
+
+.lightbox .lightbox-view .lightbox-btn {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.lightbox .lightbox-view .lightbox-btn-next {
+    right: 0;
+}
+
+.lightbox .lightbox-view .lightbox-btn-next-show {
+    background: url(../img/next.png) no-repeat right center;
+}
+
+.lightbox .lightbox-view .lightbox-btn-prev {
+    left: 0;
+}
+
+.lightbox .lightbox-view .lightbox-btn-prev-show {
+    background: url(../img/prev.png) no-repeat left center;
+}
+
+.lightbox .lightbox-caption {
+    position: relative;
+    margin: 0 0.05rem;
+    margin-top: -0.6rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lightbox .lightbox-caption .lightbox-caption-area {
+    padding: 0.1rem 0.05rem;
+    color: #fff;
+}
+
+.lightbox .lightbox-caption-area .pic-title {
+    margin: 0;
+}
+
+.lightbox .lightbox-caption-area .pic-index {
+    color: #999;
+}
+
+.lightbox .lightbox-caption .lightbox-close-btn {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    right: 10px;
+    top: 13px;
+    background: url(../img/close.png) no-repeat center center;
+    cursor: pointer;
 }

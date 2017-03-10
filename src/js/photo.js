@@ -2,10 +2,10 @@ $(document).ready(function(){
     var timer = setInterval(waterFall,100);
     var number = 0;
     var flag = true;
+    // 动态的加载图片
     $(window).on('scroll', function(){
         if (checkScrollSlide() && flag) {
             number++;
-            console.log(number);
             $.ajax({
                 type: "GET",
                 url: "photo.php?number=" + number,
@@ -28,6 +28,10 @@ $(document).ready(function(){
             });
         }
     });
+
+
+
+
 });
 
 function waterFall() {
