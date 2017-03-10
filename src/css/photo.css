@@ -82,10 +82,10 @@
 
 .lightbox .lightbox-view .lightbox-close-btn {
     position: absolute;
-    width: 27px;
-    height: 27px;
-    top: 0;
-    right: 0;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
 }
 

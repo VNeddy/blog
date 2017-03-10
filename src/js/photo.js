@@ -125,7 +125,7 @@ function showLightbox(picSrc) {
     lightbox.css({
         width:winW/2+10,
         height:winH/2+10,
-        left:(winW/2+10)/2,
+        marginLeft:-(winW/2+10)/2,
         top:-(winH/2+10)
     }).animate({
         top:(winH/2+10)/2
@@ -135,20 +135,56 @@ function showLightbox(picSrc) {
     });
 }
 
+// 加载图片
 function loadPic(picSrc) {
+    // 取消上一次的图片尺寸
+    $('.lightbox-img').css({
+        height: 'auto',
+        width: 'auto',
+    }).hide();
     preLoadPic(picSrc, function() {
         var lightbox_img = $('.lightbox-img');
         lightbox_img.attr('src',picSrc);
         var picW = lightbox_img.width(),
             picH = lightbox_img.height();
-            // console.log(picW+" : "+picH);
+        changePic(picW,picH);
+    });
+}
+
+// 改变图片大小
+function changePic(picW,picH) {
+    var winH = $(window).height(),
+        winW = $(window).width();
+
+    // 如果图片宽高大于浏览器的宽高，按比例调整
+    var scale = Math.min(winW/(picW+10),winH/(picH+10),1);
+
+    picW *= scale;
+    picH *= scale;
+
+    $('.lightbox-view').animate({
+        width: picW-10,
+        height: picH-10,
+    });
+
+    $('.lightbox').animate({
+        width:picW,
+        height:picH,
+        marginLeft:-(picW/2),
+        top: (winH-picH)/2
+    },function() {
+        $('.lightbox-img').css({
+            width: picW-10,
+            height: picH-10,
+        }).fadeIn();
+        $('.lightbox-close-btn').fadeIn();
+        $('.lightbox-btn').fadeIn()
     });
 }
 
 // 预加载图片
 function preLoadPic(picSrc,callback) {
     var img = new Image();
-    img.src = picSrc;
     if(!!window.ActiveXObject) {
         img.onreadystatechange = function() {
             if (this.readyState == "complete") {
@@ -160,5 +196,6 @@ function preLoadPic(picSrc,callback) {
             callback();
         }
     }
+    img.src = picSrc;
 
 }
