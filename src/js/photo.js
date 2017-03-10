@@ -45,23 +45,20 @@ $(document).ready(function(){
     });
 
     // 鼠标移动到上一张/下一张/和关闭按钮的效果
-    $('.lightbox-btn-prev').on("mouseover",function() {
-        $(this).addClass("lightbox-btn-prev-show");
+    $('.lightbox-btn-prev').hover(function() {
+        $(this).addClass('lightbox-btn-prev-show');
+    }, function() {
+        $(this).removeClass('lightbox-btn-prev-show');
     });
-    $('.lightbox-btn-next').on("mouseover",function() {
-        $(this).addClass("lightbox-btn-next-show");
+    $('.lightbox-btn-next').hover(function() {
+        $(this).addClass('lightbox-btn-next-show');
+    }, function() {
+        $(this).removeClass('lightbox-btn-next-show');
     });
-    $('.lightbox-btn-prev').on("mouseout",function() {
-        $(this).removeClass("lightbox-btn-prev-show");
-    });
-    $('.lightbox-btn-next').on("mouseout",function() {
-        $(this).removeClass("lightbox-btn-next-show");
-    });
-    $('.lightbox-close-btn').on("mouseover",function() {
-        $(this).addClass("lightbox-close-btn-show");
-    });
-    $('.lightbox-close-btn').on("mouseout",function() {
-        $(this).removeClass("lightbox-close-btn-show");
+    $('.lightbox-close-btn').hover(function() {
+        $(this).addClass('lightbox-close-btn-show');
+    }, function() {
+        $(this).removeClass('lightbox-close-btn-show');
     });
 
 });
