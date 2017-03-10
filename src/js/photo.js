@@ -16,7 +16,7 @@ $(document).ready(function(){
                         $.each(dataInt.data, function(index, value) {
                             var oBox = $('<div>').addClass('box').appendTo($('.mainbody'));
                             var oPic = $('<div>').addClass('pic').appendTo($(oBox));
-                            $('<img>').attr('src', value.url).appendTo(oPic);
+                            $('<img>').addClass('js-lightbox').attr('src', value.url).appendTo(oPic);
                         });
                     } else {
                         flag = false;
@@ -29,8 +29,43 @@ $(document).ready(function(){
         }
     });
 
+    // 因为动态加载图片，图片弹出时，通过事件委托机制绑定到body上
+    $(document.body).delegate(".js-lightbox","click",function() {
+        $('.lightbox-wrap').fadeIn();
+        $('.lightbox').fadeIn();
+        // 锁定滚动条
+        $(document.body).css({"overflow":"hidden"});
+        var currentSrc = $(this).attr("src");
+        $('.lightbox-img').attr("src",currentSrc);
+    });
 
+    // 点击遮罩层或关闭按钮隐藏大图
+    $('.lightbox-wrap,.lightbox-close-btn').on("click",function() {
+        $('.lightbox-wrap').fadeOut();
+        $('.lightbox').fadeOut();
+        // 解除滚动条锁定
+        $(document.body).css({"overflow":"visible"});
+    });
 
+    // 鼠标移动到上一张/下一张/和关闭按钮的效果
+    $('.lightbox-btn-prev').on("mouseover",function() {
+        $(this).addClass("lightbox-btn-prev-show");
+    });
+    $('.lightbox-btn-next').on("mouseover",function() {
+        $(this).addClass("lightbox-btn-next-show");
+    });
+    $('.lightbox-btn-prev').on("mouseout",function() {
+        $(this).removeClass("lightbox-btn-prev-show");
+    });
+    $('.lightbox-btn-next').on("mouseout",function() {
+        $(this).removeClass("lightbox-btn-next-show");
+    });
+    $('.lightbox-close-btn').on("mouseover",function() {
+        $(this).addClass("lightbox-close-btn-show");
+    });
+    $('.lightbox-close-btn').on("mouseout",function() {
+        $(this).removeClass("lightbox-close-btn-show");
+    });
 
 });
 

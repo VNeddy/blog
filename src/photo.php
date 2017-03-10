@@ -58,19 +58,20 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                 foreach ($data as $val) { ?>
                     <div class="box">
                         <div class="pic">
-                            <?php echo "<img src='".$val['url']."' >" ?>
+                            <?php echo "<img class='js-lightbox' src='".$val['url']."' >" ?>
                         </div>
                     </div>
                 <?php } } ?>
+                <!-- 遮罩层开始 -->
+                <div class="lightbox-wrap"></div>
+                <!-- 遮罩层结束 -->
                 <!-- 图片弹出层开始 -->
-                <div class="lightbox-wrap">
-                    <div class="lightbox">
-                        <div class="lightbox-view">
-                            <span class="lightbox-btn lightbox-btn-prev lightbox-btn-prev-show"></span>
-                            <img class="lightbox-img" src="img/photo/4.jpg">
-                            <span class="lightbox-btn lightbox-btn-next lightbox-btn-next-show"></span>
-                            <div class="lightbox-close-btn lightbox-close-btn-show"></div>
-                        </div>
+                <div class="lightbox">
+                    <div class="lightbox-view">
+                        <span class="lightbox-btn lightbox-btn-prev"></span>
+                        <img class="lightbox-img" src="img/photo/4.jpg">
+                        <span class="lightbox-btn lightbox-btn-next"></span>
+                        <div class="lightbox-close-btn"></div>
                     </div>
                 </div>
                 <!-- 图片弹出层结束 -->

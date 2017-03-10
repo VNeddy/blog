@@ -23,6 +23,7 @@
 }
 
 .mainbody .lightbox-wrap {
+    display: none;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -33,6 +34,7 @@
 }
 
 .mainbody .lightbox {
+    display: none;
     position: absolute;
     left: calc(50% - 1.5rem);
     top: calc(50% - 1.5rem);
