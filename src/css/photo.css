@@ -35,9 +35,11 @@
 
 .mainbody .lightbox {
     display: none;
-    position: absolute;
-    left: calc(50% - 1.5rem);
-    top: calc(50% - 1.5rem);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    /*margin-left: -1.5rem;
+    margin-top: -1.5rem;*/
     width: 3rem;
     z-index: 1001;
 }
@@ -52,7 +54,6 @@
 
 .lightbox .lightbox-view .lightbox-img {
     display: block;
-    width: 100%;
 }
 
 .lightbox .lightbox-view .lightbox-btn {

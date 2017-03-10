@@ -31,12 +31,9 @@ $(document).ready(function(){
 
     // 因为动态加载图片，图片弹出时，通过事件委托机制绑定到body上
     $(document.body).delegate(".js-lightbox","click",function() {
-        $('.lightbox-wrap').fadeIn();
-        $('.lightbox').fadeIn();
-        // 锁定滚动条
-        $(document.body).css({"overflow":"hidden"});
-        var currentSrc = $(this).attr("src");
-        $('.lightbox-img').attr("src",currentSrc);
+        var picSrc = $(this).attr('src');
+        // 弹出幕布并加载图片
+        showLightbox(picSrc);
     });
 
     // 点击遮罩层或关闭按钮隐藏大图
@@ -44,7 +41,7 @@ $(document).ready(function(){
         $('.lightbox-wrap').fadeOut();
         $('.lightbox').fadeOut();
         // 解除滚动条锁定
-        $(document.body).css({"overflow":"visible"});
+        // $(document.body).css({"overflow":"visible"});
     });
 
     // 鼠标移动到上一张/下一张/和关闭按钮的效果
@@ -108,4 +105,60 @@ function waterFall() {
 function checkScrollSlide() {
     // （滚动高度+当前可视高度）/ 总高度 >= 0.85 即滚动到总界面的85%时加载
     return ($(document).scrollTop()+$(window).height())/$(document).height() >= 0.85 ? true:false;
+}
+
+function showLightbox(picSrc) {
+    $('.lightbox-btn').fadeOut();
+    $('.lightbox-close-btn').fadeOut();
+    $('.lightbox-img').fadeOut();
+    $('.lightbox-wrap').fadeIn();
+    var lightbox = $('.lightbox');
+    lightbox.fadeIn();
+    var winW = $(window).width();
+    var winH = $(window).height();
+    // 设置幕布大小
+    $('.lightbox-view').css({
+        width:winW/2,
+        height:winH/2
+    });
+    // 设置幕布位置
+    lightbox.css({
+        width:winW/2+10,
+        height:winH/2+10,
+        left:(winW/2+10)/2,
+        top:-(winH/2+10)
+    }).animate({
+        top:(winH/2+10)/2
+    }, function() {
+        // 加载图片
+        loadPic(picSrc);
+    });
+}
+
+function loadPic(picSrc) {
+    preLoadPic(picSrc, function() {
+        var lightbox_img = $('.lightbox-img');
+        lightbox_img.attr('src',picSrc);
+        var picW = lightbox_img.width(),
+            picH = lightbox_img.height();
+            // console.log(picW+" : "+picH);
+    });
+}
+
+// 预加载图片
+function preLoadPic(picSrc,callback) {
+    var img = new Image();
+    img.src = picSrc;
+    if(!!window.ActiveXObject) {
+        img.onreadystatechange = function() {
+            if (this.readyState == "complete") {
+                callback();
+            }
+        }
+    } else {
+        img.onload = function() {
+            callback();
+        }
+    }
+
 }
