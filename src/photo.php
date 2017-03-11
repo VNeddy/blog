@@ -71,7 +71,10 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                         <span class="lightbox-btn lightbox-btn-prev"></span>
                         <img class="lightbox-img" src="img/photo/4.jpg">
                         <span class="lightbox-btn lightbox-btn-next"></span>
+                    </div>
+                    <div class="lightbox-index">
                         <div class="lightbox-close-btn"></div>
+                        <span>当前索引：1 of 2</span>
                     </div>
                 </div>
                 <!-- 图片弹出层结束 -->

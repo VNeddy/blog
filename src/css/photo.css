@@ -80,15 +80,26 @@
     background: url(../img/prev.png) no-repeat left center;
 }
 
-.lightbox .lightbox-view .lightbox-close-btn {
+.lightbox .lightbox-index .lightbox-close-btn {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 5px;
-    right: 5px;
+    width: 40px;
+    height: 40px;
+    right: 0px;
     cursor: pointer;
+    background: url(../img/close.png) no-repeat center center;
 }
 
-.lightbox .lightbox-view .lightbox-close-btn-show {
-    background: rgba(0, 0, 0, 0.5) url(../img/close.png) no-repeat center center;
+.lightbox .lightbox-index {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background: rgba(0,0,0,0.5);
+    width: calc(100% - 10px);
+    height: 40px;
+}
+
+.lightbox .lightbox-index span {
+    color: #fff;
+    line-height: 40px;
+    margin-left: 5%;
 }
