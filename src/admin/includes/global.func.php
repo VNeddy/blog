@@ -11,6 +11,15 @@ function _runtime() {
 }
 
 /**
+ * 用来取消字符串中的<br />
+ * @access public
+ * @return string 返回字符串
+ */
+function br2nl($text) {
+    return preg_replace('/<br\\s*?\/??>/i','',$text);
+}
+
+/**
  * 用来生成验证码
  * @access public
  * @param  integer $_width    验证码图片长度

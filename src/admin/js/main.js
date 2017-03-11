@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 			if(msg.status){
                 alert('发布成功');
-				location.reload(true);
+				location.href = 'article.manage.php';
 			}
 			else {
 				$.each(msg.errors,function(k,v){
@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 			if(msg.status){
                 alert('修改成功');
-				location.reload(true);
+				location.href = 'article.manage.php';
 			}
 			else {
 				$.each(msg.errors,function(k,v){
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
  			if(msg.status){
                  alert('发布成功');
- 				location.reload(true);
+ 				location.href = 'gossip.manage.php';
  			}
  			else {
  				$.each(msg.errors,function(k,v){
@@ -110,7 +110,7 @@ $(document).ready(function(){
 
  			if(msg.status){
                  alert('修改成功');
- 				location.reload(true);
+ 				location.href = 'gossip.manage.php';
  			}
  			else {
  				$.each(msg.errors,function(k,v){

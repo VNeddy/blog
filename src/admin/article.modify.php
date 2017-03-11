@@ -55,7 +55,7 @@ $data = $mysqli->query($sql)->fetch_assoc();
                     </div>
                     <div class="group flag">
                         <label for="content">文章内容</label>
-                        <textarea name="content" id="content" rows="15" cols="80"><?php echo $data['content']; ?></textarea>
+                        <textarea name="content" id="content" rows="15" cols="80"><?php echo br2nl($data['content']); ?></textarea>
                     </div>
                     <input type="submit" name="button" value="修改文章" class="button" id="submit">
                 </form>

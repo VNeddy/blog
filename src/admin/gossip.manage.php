@@ -31,7 +31,7 @@ $countpage = ceil($num / $pagesize);
 if ($countpage == 1) {
     $countpage = 0;
 }
-$sql = "SELECT id,content FROM gossip ORDER BY id ASC LIMIT {$pagenum},{$pagesize}";
+$sql = "SELECT id,content,pubTime FROM gossip ORDER BY id DESC LIMIT {$pagenum},{$pagesize}";
 $mysqli_result = $mysqli->query($sql);
 
 if ($mysqli_result && $mysqli_result->num_rows) {
@@ -61,6 +61,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                     <thead>
                         <tr>
                             <th>编号（id）</th>
+                            <th>发布时间</th>
                             <th>碎语闲言</th>
                             <th>操作</th>
                         </tr>
@@ -70,6 +71,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                             foreach ($data as $val) { ?>
                                 <tr>
                                     <td><?php echo $val['id']; ?></td>
+                                    <td><?php echo date("Y-m-d H:m:s",$val['pubTime']); ?></td>
                                     <td><?php echo $val['content']; ?></td>
                                     <td>
                                         <a href="gossip.modify.php?id=<?php echo $val['id']; ?>">修改</a>
