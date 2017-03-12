@@ -5,7 +5,24 @@ define('IN_TG',true);
 define('SCRIPT','article.add');
 // 引入公共文件，转换成硬路径，加快速度
 require_once dirname(__FILE__)."/includes/common.inc.php";
-if(!isset($_COOKIE['username'])) {
+// 检查登录状态
+if (isset($_COOKIE['username'])) {
+    $sql1 = "SELECT * FROM admin WHERE username='{$_COOKIE['username']}';";
+    $mysqli_result = $mysqli->query($sql1);
+    $rows = $mysqli_result->fetch_array();
+    if ($rows['uniqid'] != $_COOKIE['uniqid']) {
+        setcookie('username','',time()-1);
+        setcookie('uniqid','',time()-1);
+        echo <<<EOF
+        <script type="text/javascript">
+        window.onload = function() {
+            alert("您的账号已在别处登录");
+            window.location.href = 'login.php';
+        }
+        </script>
+EOF;
+    }
+} else {
     echo <<<EOF
     <script type="text/javascript">
     window.onload = function() {

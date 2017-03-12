@@ -30,8 +30,12 @@ if(@$_GET['action'] == 'login') {
         if($mysqli_stmt->execute()) {
             $mysqli_stmt->store_result();
             if($mysqli_stmt->num_rows > 0) {
+                $uniqid = sha1(uniqid(rand(),true));
+                $sql1 = "UPDATE admin SET uniqid='{$uniqid}' WHERE username='{$username}';";
+                $mysqli->query($sql1);
                 echo json_encode(array('status'=>1));
                 setcookie('username', $username);
+                setcookie('uniqid', $uniqid);
             } else {
                 echo '{"status":0,"errors":'.json_encode(array('username'=>'用户名或密码错误')).'}';
             }

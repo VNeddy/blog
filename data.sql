@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS admin(
 	id INT UNSIGNED AUTO_INCREMENT,
 	username CHAR(50) NOT NULL,
 	password CHAR(50) NOT NULL,
+	uniqid CHAR(50),
 	PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 
