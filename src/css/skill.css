@@ -156,7 +156,7 @@
 .search-btn {
     outline: none;
     height: 0.3rem;
-    width: calc(35% - 0.05rem);
+    width: calc(35% - 0.06rem);
     padding: 0;
     cursor: pointer;
     background: #ededed;
