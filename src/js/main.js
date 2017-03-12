@@ -13,7 +13,7 @@ $(document).ready(function() {
         $('header').find('ul').find('a[href=' + "'photo.php'" + ']').addClass('current');
     } else if (current_url.search(/^.*article\.search\.php.*$/) === 0) {
         // 查询文章归到技术圈
-        $('header').find('ul').find('a[href=' + "'skill.php'" + ']').addClass('current');
+        $('header').find('ul').find('a[href=' + "'hot_article.php'" + ']').addClass('current');
     } else {
         for (var i = 0; i < list_a.length; i++) {
             if (list_a[i].href == current_url) {
@@ -66,4 +66,8 @@ $(document).ready(function() {
     // 每次加载页面触发scroll事件
     $(window).trigger('scroll');
 
+
+    $('.back').on("click",function() {
+        window.history.go(-1);
+    })
 });

@@ -97,7 +97,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                 </div>
                 <form method="post" enctype="multipart/form-data" class="add-pic" id="add-pic">
                     <div class="group">
-                        <label for="mypic">上传照片</label>
+                        <label for="mypic">上传照片(支持jif/png/jepg格式照片，大小不得超过1M)</label>
                         <input type="file" name="mypic">
                         <input type="submit" name="button" value="上传照片" class="button" id="submit">
                     </div>

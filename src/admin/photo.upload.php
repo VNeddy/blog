@@ -7,8 +7,8 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
 require_once ROOT_PATH."/includes/connect.inc.php";
 
 if ($_FILES["mypic"]["name"] != "") {
-    if ($_FILES["mypic"]['size'] > 512000) { //限制上传大小
-        echo '{"status":0,"errors":{"mypic":"图片大小不能超过500k"}}';
+    if ($_FILES["mypic"]['size'] > 1024000) { //限制上传大小
+        echo '{"status":0,"errors":{"mypic":"图片大小不能超过1M"}}';
         exit;
     }
     //限制上传格式

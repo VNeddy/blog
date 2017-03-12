@@ -15,7 +15,7 @@ if (isset($_GET['page'])) {
 } else {
     $_page = 1;
 }
-$_pagesize = 12;
+$_pagesize = 10;
 $_pagenum = ($_page - 1) * $_pagesize;
 
 // 首先要得到所有的数据总和

@@ -100,12 +100,12 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                                     <td>
                                         <a href="javascript:;" class="replay" id="<?php echo $val['message_id']; ?>">回复</a>
                                         <span>|</span>
-                                        <a href="message.del.php?id=<?php echo $val['message_id']; ?>">删除</a>
+                                        <a href="article.replay.del.php?id=<?php echo $val['message_id']; ?>">删除</a>
                                     </td>
                                 </tr>
                                 <?php }
                             } else { ?>
-                                <td colspan="5">没有留言</td>
+                                <td colspan="6">没有留言</td>
                                 <?php } ?>
                     </tbody>
                 </table>

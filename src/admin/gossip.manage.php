@@ -98,7 +98,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                                 </tr>
                                 <?php }
                             } else { ?>
-                                <td colspan="3">没有说说</td>
+                                <td colspan="4">没有说说</td>
                                 <?php } ?>
                     </tbody>
                 </table>

@@ -28,7 +28,7 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
                 <span class="myname">VNeddy Chen</span>
                 <span class="myword">世人万千种 浮云莫去求 斯人若彩虹 遇上方知有</span>
             </div>
-            <a href="skill.php" class="enter-btn">
+            <a href="hot_article.php" class="enter-btn">
                 <span class="line line-top"></span>
                 <span class="line line-right"></span>
                 <span class="line line-bottom"></span>

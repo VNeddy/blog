@@ -60,7 +60,7 @@ $data = $mysqli->query($sql)->fetch_assoc();
                     <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                     <div class="group">
                         <label for="content">说说内容</label>
-                        <textarea name="content" id="content" rows="5" cols="80"><?php echo $data['content']; ?></textarea>
+                        <textarea name="content" id="content" rows="5" cols="80"><?php echo br2nl($data['content']); ?></textarea>
                     </div>
                     <input type="submit" name="button" value="修改说说" class="button" id="submit">
                 </form>

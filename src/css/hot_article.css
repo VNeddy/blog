@@ -100,20 +100,20 @@
     color: #777;
 }
 
-.content .page-num ul {
-    margin-right: 0.3rem;
-    float: right;
+.mainbody .page-num ul {
+    margin-left: 0.3rem;
+    margin-top: 0.05rem;
 }
 
-.content .page-num ul li {
+.mainbody .page-num ul li {
     float: left;
     padding-left: 0.1rem;
     margin-bottom: 0.2rem;
 }
 
-.content .page-num ul li a {
+.mainbody .page-num ul li a {
     display: block;
-    border: 1px solid #000;
+    border: 1px solid #4cae4c;
     color: #222;
     width: 0.24rem;
     height: 0.24rem;
@@ -121,9 +121,10 @@
     line-height: 0.24rem;
 }
 
-.content .page-num ul li a:hover,
-.content .page-num ul li a.selected {
-    background: #666;
+.mainbody .page-num ul li a:hover,
+.mainbody .page-num ul li a.selected {
+    background: #5cb85c;
+    border-color: #4cae4c;
 }
 
 .mainbody .search {

@@ -2,7 +2,7 @@
 // 定义个常量，用来授权调用includes里的常亮
 define('IN_TG',true);
 // 定义个常量，用来指定本页内容
-define('SCRIPT','skill');
+define('SCRIPT','hot_article');
 // 引入公共文件，转换成硬路径，加快速度
 require_once dirname(__FILE__)."/includes/common.inc.php";
 
@@ -97,10 +97,10 @@ if ($mysqli_result_1 && $mysqli_result_1->num_rows) {
                             </p>
                         </div>
                 <?php } ?>
-                <a href="skill.php" class="back">返回</a>
+                <a href="javascript:;" class="back">返回</a>
                 <?php } else { ?>
                     <strong>未找到该文章 ^_^</strong>
-                    <a href="skill.php" class="back">返回</a>
+                    <a href="javascript:;" class="back">返回</a>
                 <?php } ?>
                 <div class="page-num">
                     <ul>
