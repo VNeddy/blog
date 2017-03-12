@@ -79,7 +79,7 @@ if ($mysqli_result && $mysqli_result->num_rows) {
                     <?php if (is_array(@$data)) {
                         foreach ($data as $val) { ?>
                             <div class="img-info">
-                                <img src=<?php echo "../../".$val['url']; ?>>
+                                <img src=<?php echo "../".$val['url']; ?>>
                                 <span>URL: <?php echo $val['url']; ?></span>
                                 <span><a href="photo.del.php?id=<?php echo $val['id']; ?>">删除</a></span>
                             </div>
