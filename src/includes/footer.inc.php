@@ -8,6 +8,6 @@ if (!defined('IN_TG')) {
 
 <footer>
     <span class="copy">
-        <span>加载耗时: <?php echo round((_runtime() - START_TIME),5); ?>秒&nbsp;&nbsp;&nbsp;</span>copyright &copy 2016 VNeddy Chen
+        <span>加载耗时: <?php echo round((_runtime() - START_TIME),5); ?>秒&nbsp;&nbsp;&nbsp;</span>Copyright &copy Copyright Holder VNeddy Chen.
     </span>
 </footer>
