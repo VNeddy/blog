@@ -13,7 +13,7 @@ require_once dirname(__FILE__)."/includes/common.inc.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>二哥二姐二姐夫</title>
+    <title>首页</title>
 </head>
 <?php require_once ROOT_PATH."includes/title.inc.php"; ?>
 

@@ -61,7 +61,7 @@ if ($mysqli_result_1 && $mysqli_result_1->num_rows) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>技术圈</title>
+    <title>文学苑</title>
 </head>
 <?php require_once ROOT_PATH."includes/title.inc.php"; ?>
 
