@@ -6,6 +6,8 @@ define('SCRIPT','gossip.add');
 // 引入公共文件，转换成硬路径，加快速度
 require_once dirname(__FILE__)."/includes/common.inc.php";
 
+// 引入连接数据库文件
+require_once ROOT_PATH."/includes/connect.inc.php";
 // 检查登录状态
 if (isset($_COOKIE['username'])) {
     $sql1 = "SELECT * FROM admin WHERE username='{$_COOKIE['username']}';";
